@@ -79,6 +79,16 @@ extension AnimalFavoriteVC {
     
     // MARK: Custom Methods
     func setupUI() {
+        self.title = "Favorite"
+        self.view.backgroundColor = .white
+        self.view.addSubview(collectionView)
+
+        self.collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    func setupNavigation() {
         let resetAction = UIAction { [weak self] _ in
             self?.viewStore.send(.fetchPhotos)
         }
@@ -106,27 +116,23 @@ extension AnimalFavoriteVC {
                 maxWidth: nil
             )
             
-            let sheetViewController = SheetViewController(controller: controller, 
+            let sheetViewController = SheetViewController(controller: controller,
                                                           sizes: [.percent(0.5), .intrinsic],
                                                           options: options)
             self?.present(sheetViewController, animated: true)
         }
         
-        let filterButton = UIBarButtonItem(title: "Filter", 
+        let filterButton = UIBarButtonItem(title: "Filter",
                                            primaryAction: filterAction)
         self.navigationController?.navigationBar.topItem?.rightBarButtonItems = [filterButton, resetButton]
-        self.title = "Favorite"
-        self.view.backgroundColor = .white
-        self.view.addSubview(collectionView)
-
-        self.collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
     }
     
     func updateUI() {
-        viewStore.publisher.photos.receive(on: DispatchQueue.main).sink { [weak self] _ in
+        viewStore.publisher.photos.receive(on: DispatchQueue.main).sink { [weak self] photos in
             self?.collectionView.reloadData()
+            if !photos.isEmpty {
+                self?.setupNavigation()
+            }
         }.store(in: &cancellables)
         
         viewStore.publisher.viewState.receive(on: DispatchQueue.main).sink { [weak self] value in

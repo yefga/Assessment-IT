@@ -39,7 +39,12 @@ struct AnimalFavoriteReducer: Reducer {
             }
             
             state.viewState = .success(empty: model.isEmpty)
-            state.titleLabel = "There are \(state.storedPhotos.count) photos in your favorite."
+            if state.storedPhotos.count == 1 {
+                state.titleLabel = "There is \(state.storedPhotos.count) photo in your favorite."
+            } else {
+                state.titleLabel = "There are \(state.storedPhotos.count) photos in your favorite."
+            }
+            
             
         case .refresh:
             return .send(.fetchPhotos)

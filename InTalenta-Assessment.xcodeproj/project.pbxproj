@@ -41,6 +41,8 @@
 		DFB17B5B2B03B7CB0039A355 /* AnimalDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB17B5A2B03B7CB0039A355 /* AnimalDetailReducer.swift */; };
 		DFB17B5D2B03CBF50039A355 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB17B5C2B03CBF50039A355 /* UIColor+Extension.swift */; };
 		DFB17B5E2B03DAA20039A355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF08E90D2AF63F1A007CBB9F /* Assets.xcassets */; };
+		DFB17B612B03DC320039A355 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DFB17B602B03DC320039A355 /* SnapKit */; };
+		DFB17B632B03DC320039A355 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DFB17B622B03DC320039A355 /* SnapKit-Dynamic */; };
 		DFC03C6A2B021EB900C6E884 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC03C692B021EB900C6E884 /* BaseTabBarController.swift */; };
 		DFC03C6C2B024FFA00C6E884 /* ReusableLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC03C6B2B024FFA00C6E884 /* ReusableLoadingView.swift */; };
 		DFC03C712B0256BF00C6E884 /* AnimalFavoritePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC03C702B0256BF00C6E884 /* AnimalFavoritePhotoCell.swift */; };
@@ -97,6 +99,8 @@
 				DF08E9572AF64EF0007CBB9F /* Kingfisher in Frameworks */,
 				DF08E9762AFD0D33007CBB9F /* netfox in Frameworks */,
 				DF08E95D2AF64F6E007CBB9F /* ComposableArchitecture in Frameworks */,
+				DFB17B612B03DC320039A355 /* SnapKit in Frameworks */,
+				DFB17B632B03DC320039A355 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +403,8 @@
 				DF08E95C2AF64F6E007CBB9F /* ComposableArchitecture */,
 				DF08E9752AFD0D33007CBB9F /* netfox */,
 				DFB17B522B034CBF0039A355 /* FittedSheets */,
+				DFB17B602B03DC320039A355 /* SnapKit */,
+				DFB17B622B03DC320039A355 /* SnapKit-Dynamic */,
 			);
 			productName = "InTalenta-Assessment";
 			productReference = DF08E8FE2AF63F17007CBB9F /* InTalenta-Assessment.app */;
@@ -429,11 +435,11 @@
 			);
 			mainGroup = DF08E8F52AF63F17007CBB9F;
 			packageReferences = (
-				DF08E9542AF64ED6007CBB9F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DF08E9552AF64EF0007CBB9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DF08E95B2AF64F6E007CBB9F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				DF08E9742AFD0D33007CBB9F /* XCRemoteSwiftPackageReference "netfox" */,
 				DFB17B512B034CBF0039A355 /* XCRemoteSwiftPackageReference "FittedSheets" */,
+				DFB17B5F2B03DC320039A355 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DF08E8FF2AF63F17007CBB9F /* Products */;
 			projectDirPath = "";
@@ -706,14 +712,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DF08E9542AF64ED6007CBB9F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
 		DF08E9552AF64EF0007CBB9F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -746,6 +744,14 @@
 				minimumVersion = 2.6.1;
 			};
 		};
+		DFB17B5F2B03DC320039A355 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -768,6 +774,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DFB17B512B034CBF0039A355 /* XCRemoteSwiftPackageReference "FittedSheets" */;
 			productName = FittedSheets;
+		};
+		DFB17B602B03DC320039A355 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFB17B5F2B03DC320039A355 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		DFB17B622B03DC320039A355 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DFB17B5F2B03DC320039A355 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 
