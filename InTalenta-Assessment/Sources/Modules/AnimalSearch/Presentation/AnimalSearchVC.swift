@@ -108,15 +108,15 @@ extension AnimalSearchVC {
     }
     
     func addDoneButtonOnKeyboard() {
-        var doneToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        let doneToolbar: UIToolbar = UIToolbar(frame: .init(origin: .zero, size: .init(width: 320, height: 50)))
         doneToolbar.barStyle = UIBarStyle.black
 
-        var flexSpace = UIBarButtonItem(
+        let flexSpace = UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil,
             action: nil
         )
-        var done: UIBarButtonItem = UIBarButtonItem(
+        let done: UIBarButtonItem = UIBarButtonItem(
             title: "Done",
             style: .done, target: self,
             action: #selector(doneButtonAction(sender:))
