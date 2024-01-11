@@ -29,3 +29,13 @@ The project relies on the following third-party libraries:
 - FittedSheets: Implements a bottom sheet component for a seamless user experience.
 - Kingfisher: Utilized for fetching and caching images from the server.
 Ensure that you integrate these dependencies correctly in your project.
+
+## Preview
+
+<details>
+     
+<summary>iPhone 15, iOS 17</summary>
+
+![iOS](./preview.gif)
+
+</details>

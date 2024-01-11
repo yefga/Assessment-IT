@@ -69,6 +69,7 @@ extension AnimalSearchVC {
         self.tableView.refreshControl = self.refreshControl
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.separatorStyle = .none
+        addDoneButtonOnKeyboard()
     }
     
     func updateUI() {
@@ -106,6 +107,32 @@ extension AnimalSearchVC {
         }.store(in: &cancellables)
     }
     
+    func addDoneButtonOnKeyboard() {
+        var doneToolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 320, 50))
+        doneToolbar.barStyle = UIBarStyle.black
+
+        var flexSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        var done: UIBarButtonItem = UIBarButtonItem(
+            title: "Done",
+            style: .done, target: self,
+            action: #selector(doneButtonAction(sender:))
+        )
+
+
+        doneToolbar.items = [flexSpace, done]
+        doneToolbar.sizeToFit()
+
+        self.searchBar.inputAccessoryView = doneToolbar
+
+    }
+
+    @objc func doneButtonAction(sender: UIBarButtonItem) {
+        self.searchBar.resignFirstResponder()
+    }
 }
 
 // MARK: - UITableViewDelegate
